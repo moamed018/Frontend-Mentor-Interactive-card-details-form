@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="list hidden">
+      <div class="overlay"></div>
+      <div class="cards-list-card">
+        <button class="clear btn">Clear</button>
+        <h3>List of cards</h3>
+        <div class="list-items">
+        </div>
+        <button class="btn btn-close">Close</button>
+      </div>
+    </div>
+
+    <main>
+      <div class="left">
+        <div class="front">
+          <div class="logo">
+            <img src="./images/card-logo.svg" alt="logo" />
+          </div>
+          <div class="card-info">
+            <p id="number-card">0000 0000 0000 0000</p>
+            <div class="card-info--bottom">
+              <p id="name-card">Jane Appleseed</p>
+              <p id="date-card">
+                <span id="mm-card">00</span>/<span id="yy-card">00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="back">
+          <p id="cvc-card">000</p>
+        </div>
+        <button class="btn" id="list-btn">list of Cards</button>
+      </div>
+
+      <div class="right">
+        <form action="#">
+          <div class="line">
+            <label for="name">Cardholder Name</label>
+            <input type="text" id="name" placeholder="e.g. Jane Appleseed" />
+            <span class="warn" id="warn-name">Can't be blank (first last)</span>
+          </div>
+
+          <div class="line">
+            <label for="num">Card Number</label>
+            <input
+              type="text"
+              id="num"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+            <span class="warn" id="warn-num"
+              >Wrong format, numbers only (14 NumberS)</span
+            >
+          </div>
+
+          <div class="date">
+            <label class="line" for="date-mm">Exp. Date (MM/YY)</label>
+            <input type="text" id="date-mm" placeholder="MM" />
+            <input type="text" id="date-yy" placeholder="YY" />
+            <span class="warn line" id="warn-date"
+              >Can't be blank (+Today)</span
+            >
+          </div>
+
+          <div>
+            <label for="cvc">cvc</label>
+            <input type="text" id="cvc" placeholder="e.g. 123" />
+            <span class="warn" id="warn-cvc">Can't be blank (3 Numbers)</span>
+          </div>
+
+          <input type="submit" class="line btn" id="sub" value="Confirm" />
+        </form>
+
+        <div class="progr"></div>
+
+        <div class="done">
+          <div class="done-info">
+            <div class="done-icon">
+              <img src="./images/icon-complete.svg" alt="icon-complete" />
+            </div>
+
+            <div class="done-text">
+              <h2>Thank you!</h2>
+              <p>We've added your card details</p>
+            </div>
+
+            <button id="continue" class="btn">Continue</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Mohamed Magdy</a>.
+      </div>
+    </main>
+
+    <!-- 
+  0000 0000 0000 0000
+  Jane Appleseed
+  00/00
+
+  000
+
+  Cardholder Name
+  e.g. Jane Appleseed
+
+  Card Number
+  e.g. 1234 5678 9123 0000
+
+  Exp. Date (MM/YY)
+  MM
+  YY
+
+  CVC
+  e.g. 123
+
+  Confirm
+
+  ! Completed state start
+
+  Thank you!
+  We've added your card details
+  Continue
+-->
+
+    <script src="main.js"></script>
+  </body>
+</html>
+
+<!-- 
+  <div class="list-item">
+            <p class="number-list">🔢 1234 5678 9123 4567</p>
+            <p class="name-list">👨 Mohamed Magdy</p>
+            <div class="list-info">
+              <span class="date-list">📅 12 / 10</span>
+              <span class="cvc-list">💳 568</span>
+            </div>
+            <button class="del-btn">Delete</button>
+          </div>
+
+          <div class="list-item">
+            <p class="number-list">🔢 1234 5678 9123 4567</p>
+            <p class="name-list">👨 Mohamed Magdy</p>
+            <div class="list-info">
+              <span class="date-list">📅 12 / 10</span>
+              <span class="cvc-list">💳 568</span>
+            </div>
+            <button class="del-btn">Delete</button>
+          </div>
+
+          <div class="list-item">
+            <p class="number-list">🔢 1234 5678 9123 4567</p>
+            <p class="name-list">👨 Mohamed Magdy</p>
+            <div class="list-info">
+              <span class="date-list">📅 12 / 10</span>
+              <span class="cvc-list">💳 568</span>
+            </div>
+            <button class="del-btn">Delete</button>
+          </div>
+
+          <div class="list-item">
+            <p class="number-list">🔢 1234 5678 9123 4567</p>
+            <p class="name-list">👨 Mohamed Magdy</p>
+            <div class="list-info">
+              <span class="date-list">📅 12 / 10</span>
+              <span class="cvc-list">💳 568</span>
+            </div>
+            <button class="del-btn">Delete</button>
+          </div>
+
+          <div class="list-item">
+            <p class="number-list">🔢 1234 5678 9123 4567</p>
+            <p class="name-list">👨 Mohamed Magdy</p>
+            <div class="list-info">
+              <span class="date-list">📅 12 / 10</span>
+              <span class="cvc-list">💳 568</span>
+            </div>
+            <button class="del-btn">Delete</button>
+            <p class="add-date">Add: 2020/10/11 on 20:00</p>
+          </div>
+
+-->
